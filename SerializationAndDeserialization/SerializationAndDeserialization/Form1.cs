@@ -42,7 +42,7 @@ namespace SerializationAndDeserialization
 
                 LoadListboxMethod();
             }
-        }
+    }
 
         private void btnSave_Click(object sender, EventArgs e)
         {

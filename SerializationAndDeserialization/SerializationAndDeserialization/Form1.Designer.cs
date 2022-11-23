@@ -972,6 +972,7 @@
         private ToolStripButton btnOpen;
         private ToolStripButton btnSave;
         private ToolStripSeparator toolStripSeparator;
+        private ToolStripSeparator toolStripSeparator1;
         private SplitContainer splitContainer1;
         private GroupBox groupBox7;
         private GroupBox groupBox9;
