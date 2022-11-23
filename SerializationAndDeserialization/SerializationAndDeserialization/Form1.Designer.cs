@@ -33,7 +33,7 @@
             this.btnOpen = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -133,7 +133,7 @@
             this.btnOpen,
             this.btnSave,
             this.toolStripSeparator,
-            this.toolStripSeparator1});
+            });
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1291, 25);
@@ -164,11 +164,7 @@
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
             this.toolStripSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            
             // 
             // splitContainer1
             // 
@@ -1042,7 +1038,6 @@
         private Panel panel18;
         private ListBox listBox1;
         private Panel panel16;
-        private ToolStripSeparator toolStripSeparator1;
         private Button btnAdd;
     }
 }
