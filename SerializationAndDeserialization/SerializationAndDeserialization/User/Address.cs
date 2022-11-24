@@ -19,4 +19,5 @@ namespace SerializationAndDeserialization
         public string Name { get; set; }
         public string RegionCode { get; set; }
     }
+    //
 }
