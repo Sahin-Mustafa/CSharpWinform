@@ -20,5 +20,6 @@ namespace SerializationAndDeserialization
         {
             return $"{Fullname} {Tc}";
         }
+        //
     }
 }

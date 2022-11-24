@@ -47,6 +47,7 @@ namespace SerializationAndDeserialization
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            //string path = Application.StartupPath + "\\User.json"; aplicationun baþladýðý yerde dosyayý baþlatýr
             if(persons.Count== 0)
             {
                 MessageBox.Show("Kiþi Listesi Boþ. Kayýt iþlemi baþarýsýz.");
@@ -117,6 +118,6 @@ namespace SerializationAndDeserialization
             }
         }
 
-        
+        //
     }
 }
