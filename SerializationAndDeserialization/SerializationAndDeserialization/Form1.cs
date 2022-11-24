@@ -1,4 +1,5 @@
 using System.Text.Json;
+
 using static System.Windows.Forms.LinkLabel;
 
 namespace SerializationAndDeserialization
@@ -46,6 +47,7 @@ namespace SerializationAndDeserialization
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            //string path = Application.StartupPath + "\\User.json"; aplicationun baþladýðý yerde dosyayý baþlatýr
             if(persons.Count== 0)
             {
                 MessageBox.Show("Kiþi Listesi Boþ. Kayýt iþlemi baþarýsýz.");
@@ -74,32 +76,48 @@ namespace SerializationAndDeserialization
         private void AddNewPerson()
         {
             Person person = new();
+            Address address= new();
+            Country country= new();
+            Experience experiencess= new();
+            ExperiencesAddress experiencesAddress = new();
+
             person.Fullname = txtFullName.Text;
             person.Tc = txtTc.Text;
             person.BirthDate = dbdBirthDate.Value;
             person.Email = txtEmail.Text;
             person.Phone = txtPhone.Text;
             person.Gender = rdbFemale.Checked;
-            person.Country = txtCountry.Text;
-            person.RegionCode = txtRegionCode.Text;
-            person.City = txtPersonCity.Text;
-            person.District = txtDistrict.Text;
-            person.PostalCode = txtPostalCode.Text;
-            person.Street = txtStreet.Text;
-            person.CompanyName = txtCompanyName.Text;
-            person.CompanyCountry = txtCompanyCountry.Text;
-            person.CompanyCity = txtCompanyCity.Text;
-            person.ExperienceDesc = txtExperienceDesc.Text;
+
+            country.Name= txtCountry.Text;
+            country.RegionCode = txtRegionCode.Text;
+
+            address.Country= country;
+            address.City = txtPersonCity.Text;
+            address.District = txtDistrict.Text;
+            address.PostalCode = txtPostalCode.Text;
+            address.Street = txtStreet.Text;
+            person.Addresses.Add(address);
+
+            experiencesAddress.Country = txtCompanyCountry.Text;
+            experiencesAddress.City = txtCompanyCity.Text;
+
+            experiencess.CompanyAdress = experiencesAddress;
+            experiencess.CompanyName= txtCompanyName.Text;
+            experiencess.ExperienceDesc = txtExperienceDesc.Text;
+            person.Experiences.Add(experiencess);
 
             persons.Add(person);
         }
 
         private void LoadListboxMethod()
         {
-            listBox1.DataSource = null;
-            listBox1.DataSource = persons;
+            listBox1.Items.Clear();
+            for (int i = 0; i < persons.Count; i++)
+            {
+                listBox1.Items.Add(persons[i]);
+            }
         }
 
-        
+        //
     }
 }

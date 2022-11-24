@@ -1038,7 +1038,6 @@
         private Panel panel18;
         private ListBox listBox1;
         private Panel panel16;
-        private ToolStripSeparator toolStripSeparator1;
         private Button btnAdd;
     }
 }
