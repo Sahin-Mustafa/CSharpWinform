@@ -1,4 +1,5 @@
 using System.Text.Json;
+
 using static System.Windows.Forms.LinkLabel;
 
 namespace SerializationAndDeserialization
@@ -80,16 +81,16 @@ namespace SerializationAndDeserialization
             person.Email = txtEmail.Text;
             person.Phone = txtPhone.Text;
             person.Gender = rdbFemale.Checked;
-            person.Country = txtCountry.Text;
-            person.RegionCode = txtRegionCode.Text;
-            person.City = txtPersonCity.Text;
-            person.District = txtDistrict.Text;
-            person.PostalCode = txtPostalCode.Text;
-            person.Street = txtStreet.Text;
-            person.CompanyName = txtCompanyName.Text;
-            person.CompanyCountry = txtCompanyCountry.Text;
-            person.CompanyCity = txtCompanyCity.Text;
-            person.ExperienceDesc = txtExperienceDesc.Text;
+            person.Address.Country.Name = txtCountry.Text;
+            person.Address.Country.RegionCode = txtRegionCode.Text;
+            person.Address.City = txtPersonCity.Text;
+            person.Address.District = txtDistrict.Text;
+            person.Address.PostalCode = txtPostalCode.Text;
+            person.Address.Street = txtStreet.Text;
+            person.Company.Name= txtCompanyName.Text;
+            person.Company.CompanyAdress.Country = txtCompanyCountry.Text;
+            person.Company.CompanyAdress.City = txtCompanyCity.Text;
+            person.Company.ExperienceDesc = txtExperienceDesc.Text;
 
             persons.Add(person);
         }
