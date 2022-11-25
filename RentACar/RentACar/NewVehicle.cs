@@ -15,8 +15,9 @@ namespace RentACar
 {
     public partial class NewVehicle : Form
     {
-        private List<Vehicle> vehicles = new List<Vehicle>();
-        string basePath = "C:\\Users\\Sabah\\source\\repos\\CSharp\\RentACar\\img\\noImg-128.png";
+        private List<Vehicle> vehicles;
+        string basePath = Application.StartupPath+ "noImg-128.png";
+        string jsonPath = Application.StartupPath + "brandList.json";
         private Vehicle vehicle;
         private bool isNewVehicle = false;
         Form home;
@@ -30,10 +31,13 @@ namespace RentACar
         }
         private void GetData()
         {
-            //List<Vehicle> vehicles1 = new List<Vehicle>();
-            string jsonPath = Application.StartupPath + "vehicles.json";
-            string json = File.ReadAllText(jsonPath);
-            this.vehicles = JsonSerializer.Deserialize<List<Vehicle>>(json);
+            string json = File.ReadAllText(this.jsonPath);
+            this.vehicles = new List<Vehicle>();
+            if (string.Empty != json)
+            {
+                this.vehicles = JsonSerializer.Deserialize<List<Vehicle>>(json);
+            }
+            
         }
         
         private void btnNewVehiclePhoto_Click(object sender, EventArgs e)
@@ -120,11 +124,8 @@ namespace RentACar
             {
                 this.vehicles.Add(vehicle);
             }
-
-
-            string path = Application.StartupPath + "\\vehicles.json";
             string json = JsonSerializer.Serialize(vehicles);
-            File.WriteAllText(path, json);
+            File.WriteAllText(this.jsonPath, json);
             txtBrandName.Clear();
             txtModelName.Clear();
             DialogResult result = MessageBox.Show("Araç Başarılı Şekilde Kayıt Edildi.\nAna sayfaya dönmek iste misiniz?", "İşlem Başarılı", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
