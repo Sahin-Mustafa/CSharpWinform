@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace RentACar
 {
-    public class Vehicles
+    public class Vehicle
     {
         public string BrandName { get; set; }
-        public List<Model> models { get; set; } = new List<Model>();
+        public List<Model> Models { get; set; } = new List<Model>();
     }
     public class Model
     {
         public string ModelName { get; set; }
-        public string ImgPath { get; set; }
+        public string ImgPath { get; set; } = string.Empty;
     }
 }
