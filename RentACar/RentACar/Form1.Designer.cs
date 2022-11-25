@@ -26,10 +26,16 @@
         ///  Required method for Designer support - do not modify
         ///  the contents of this method with the code editor.
         /// </summary>
-        private void InitialieComponent()
+        private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnNewVehicle = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnSavePage = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnRestart = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnExit = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -101,12 +107,6 @@
             this.panel24 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.newVehicleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.restartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -147,15 +147,54 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newVehicleToolStripMenuItem,
+            this.btnNewVehicle,
             this.toolStripMenuItem2,
-            this.saveToolStripMenuItem,
+            this.btnSavePage,
             this.toolStripMenuItem1,
-            this.restartToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.btnRestart,
+            this.btnExit});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
+            // 
+            // btnNewVehicle
+            // 
+            this.btnNewVehicle.Name = "btnNewVehicle";
+            this.btnNewVehicle.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.btnNewVehicle.Size = new System.Drawing.Size(181, 22);
+            this.btnNewVehicle.Text = "New Vehicle";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(178, 6);
+            // 
+            // btnSavePage
+            // 
+            this.btnSavePage.Name = "btnSavePage";
+            this.btnSavePage.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.btnSavePage.Size = new System.Drawing.Size(181, 22);
+            this.btnSavePage.Text = "Save";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(178, 6);
+            // 
+            // btnRestart
+            // 
+            this.btnRestart.Name = "btnRestart";
+            this.btnRestart.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.btnRestart.Size = new System.Drawing.Size(181, 22);
+            this.btnRestart.Text = "Restart";
+            // 
+            // btnExit
+            // 
+            this.btnExit.Name = "btnExit";
+            this.btnExit.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.Q)));
+            this.btnExit.Size = new System.Drawing.Size(181, 22);
+            this.btnExit.Text = "Exit";
             // 
             // groupBox1
             // 
@@ -973,45 +1012,6 @@
             this.panel4.Size = new System.Drawing.Size(422, 39);
             this.panel4.TabIndex = 1;
             // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.saveToolStripMenuItem.Text = "Save";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(178, 6);
-            // 
-            // newVehicleToolStripMenuItem
-            // 
-            this.newVehicleToolStripMenuItem.Name = "newVehicleToolStripMenuItem";
-            this.newVehicleToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newVehicleToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.newVehicleToolStripMenuItem.Text = "New Vehicle";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(178, 6);
-            // 
-            // restartToolStripMenuItem
-            // 
-            this.restartToolStripMenuItem.Name = "restartToolStripMenuItem";
-            this.restartToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.restartToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.restartToolStripMenuItem.Text = "Restart";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
-            | System.Windows.Forms.Keys.Q)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1063,7 +1063,6 @@
         }
 
         #endregion
-
         private MenuStrip menuStrip1;
         private ToolStripMenuItem fileToolStripMenuItem;
         private GroupBox groupBox1;
@@ -1137,11 +1136,11 @@
         private Panel panel24;
         private Label label4;
         private Panel panel4;
-        private ToolStripMenuItem newVehicleToolStripMenuItem;
+        private ToolStripMenuItem btnNewVehicle;
         private ToolStripSeparator toolStripMenuItem2;
-        private ToolStripMenuItem saveToolStripMenuItem;
+        private ToolStripMenuItem btnSavePage;
         private ToolStripSeparator toolStripMenuItem1;
-        private ToolStripMenuItem restartToolStripMenuItem;
-        private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem btnRestart;
+        private ToolStripMenuItem btnExit;
     }
 }

@@ -4,10 +4,7 @@ namespace RentACar
     {
         public Form1()
         {
-            InitialieComponent();
+            InitializeComponent();
         }
-
-
-
     }
 }
