@@ -111,6 +111,7 @@
             this.btnSaveNewVehicle.TabIndex = 8;
             this.btnSaveNewVehicle.Text = "Save";
             this.btnSaveNewVehicle.UseVisualStyleBackColor = false;
+            this.btnSaveNewVehicle.Click += new System.EventHandler(this.btnSaveNewVehicle_Click);
             // 
             // panel3
             // 
@@ -173,6 +174,7 @@
             this.btnNewVehiclePhoto.TabIndex = 8;
             this.btnNewVehiclePhoto.Text = "Select Photo";
             this.btnNewVehiclePhoto.UseVisualStyleBackColor = false;
+            this.btnNewVehiclePhoto.Click += new System.EventHandler(this.btnNewVehiclePhoto_Click);
             // 
             // panel19
             // 
@@ -243,6 +245,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "NewVehicle";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewVehicle";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

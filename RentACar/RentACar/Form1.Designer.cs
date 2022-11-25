@@ -163,6 +163,7 @@
             this.btnNewVehicle.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
             this.btnNewVehicle.Size = new System.Drawing.Size(181, 22);
             this.btnNewVehicle.Text = "New Vehicle";
+            this.btnNewVehicle.Click += new System.EventHandler(this.btnNewVehicle_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -175,6 +176,7 @@
             this.btnSavePage.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.btnSavePage.Size = new System.Drawing.Size(181, 22);
             this.btnSavePage.Text = "Save";
+            this.btnSavePage.Click += new System.EventHandler(this.btnSavePage_Click);
             // 
             // toolStripMenuItem1
             // 
