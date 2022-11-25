@@ -15,10 +15,10 @@ namespace RentACar
 {
     public partial class NewVehicle : Form
     {
-        private List<Vehicle> vehicles;
+        private List<Brand> brands;
         string basePath = Application.StartupPath+ "noImg-128.png";
         string jsonPath = Application.StartupPath + "brandList.json";
-        private Vehicle vehicle;
+        private Brand brand;
         private bool isNewVehicle = false;
         Form home;
         public NewVehicle(Form Home)
@@ -32,10 +32,10 @@ namespace RentACar
         private void GetData()
         {
             string json = File.ReadAllText(this.jsonPath);
-            this.vehicles = new List<Vehicle>();
+            this.brands = new List<Brand>();
             if (string.Empty != json)
             {
-                this.vehicles = JsonSerializer.Deserialize<List<Vehicle>>(json);
+                this.brands = JsonSerializer.Deserialize<List<Brand>>(json);
             }
             
         }
@@ -59,7 +59,7 @@ namespace RentACar
                 pbPhoto.Image = new Bitmap(openFileDialog.FileName);
                 // image file path  
                 pbPhoto.Text = openFileDialog.FileName;
-                vehicle = new Vehicle
+                brand = new Brand
                 {
                     Models =
                 { new Model
@@ -78,7 +78,7 @@ namespace RentACar
             bool isHasBrand = false;
             if (!isNewVehicle)
             {
-                vehicle = new Vehicle
+                brand = new Brand
                 {
                     BrandName = txtBrandName.Text,
                     Models =
@@ -89,32 +89,32 @@ namespace RentACar
                         }
                     }
                 };
-                vehicles.Add(vehicle);
+                brands.Add(brand);
             }
             else
             {
-                vehicle.BrandName = txtBrandName.Text;
+                brand.BrandName = txtBrandName.Text;
             }
-            vehicle.Models[0].ModelName = txtModelName.Text;
+            brand.Models[0].ModelName = txtModelName.Text;
             if (CheckVehicle())
             {
                 return;
             };
 
-            if (vehicle.Models[0].ImgPath == string.Empty)
+            if (brand.Models[0].ImgPath == string.Empty)
             {
-                vehicle.Models[0].ImgPath = this.basePath;
+                brand.Models[0].ImgPath = this.basePath;
             }
 
 
-            foreach (Vehicle item in vehicles)
+            foreach (Brand item in brands)
             {
                 if (item.BrandName.ToLower() == txtBrandName.Text.ToLower())
                 {
                     item.Models.Add(new Model
                     {
                         ModelName = txtModelName.Text,
-                        ImgPath = vehicle.Models[0].ImgPath,
+                        ImgPath = brand.Models[0].ImgPath,
                     });
                     isHasBrand = true;
                     break;
@@ -122,9 +122,9 @@ namespace RentACar
             }
             if (!isHasBrand)
             {
-                this.vehicles.Add(vehicle);
+                this.brands.Add(brand);
             }
-            string json = JsonSerializer.Serialize(vehicles);
+            string json = JsonSerializer.Serialize(brands);
             File.WriteAllText(this.jsonPath, json);
             txtBrandName.Clear();
             txtModelName.Clear();
@@ -139,7 +139,7 @@ namespace RentACar
 
         private bool CheckVehicle()
         {
-            foreach (Vehicle item in vehicles)
+            foreach (Brand item in brands)
             {
                 if (item.BrandName.ToLower() == txtBrandName.Text.ToLower())
                 {

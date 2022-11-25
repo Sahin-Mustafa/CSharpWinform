@@ -44,7 +44,7 @@
             this.btnDeleteVehicle = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.lstVehicles = new System.Windows.Forms.ListView();
+            this.lstVehicles = new System.Windows.Forms.ListBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -53,15 +53,10 @@
             this.btnAddVehicle = new System.Windows.Forms.Button();
             this.panel22 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.panelSelectPhoto = new System.Windows.Forms.Panel();
-            this.btnSelectPhoto = new System.Windows.Forms.Button();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.panel20 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.pbPhoto = new System.Windows.Forms.PictureBox();
-            this.panel18 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBoxDaily = new System.Windows.Forms.GroupBox();
             this.numericRentalPrice = new System.Windows.Forms.NumericUpDown();
             this.panel15 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -73,16 +68,11 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.cmbModels = new System.Windows.Forms.ComboBox();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.cmbVehicle = new System.Windows.Forms.ComboBox();
+            this.cmbBrands = new System.Windows.Forms.ComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.panel37 = new System.Windows.Forms.Panel();
-            this.panel32 = new System.Windows.Forms.Panel();
-            this.btnRentPerson = new System.Windows.Forms.Button();
-            this.panel33 = new System.Windows.Forms.Panel();
-            this.txtDownPayment = new System.Windows.Forms.TextBox();
             this.panel31 = new System.Windows.Forms.Panel();
             this.panel30 = new System.Windows.Forms.Panel();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
@@ -103,10 +93,15 @@
             this.btnRentalLstDelete = new System.Windows.Forms.Button();
             this.panel35 = new System.Windows.Forms.Panel();
             this.panel36 = new System.Windows.Forms.Panel();
-            this.lstRental = new System.Windows.Forms.ListView();
+            this.lstRental = new System.Windows.Forms.ListBox();
             this.panel24 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtDownPayment = new System.Windows.Forms.TextBox();
+            this.panel37 = new System.Windows.Forms.Panel();
+            this.panel33 = new System.Windows.Forms.Panel();
+            this.btnRentPerson = new System.Windows.Forms.Button();
+            this.panel32 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -119,19 +114,18 @@
             this.splitContainer2.SuspendLayout();
             this.panelVehicleDelete.SuspendLayout();
             this.panelAddbtn.SuspendLayout();
-            this.panelSelectPhoto.SuspendLayout();
             this.panel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
-            this.groupBox2.SuspendLayout();
+            this.groupBoxDaily.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericRentalPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
-            this.panel32.SuspendLayout();
             this.panel30.SuspendLayout();
             this.panel28.SuspendLayout();
             this.panel34.SuspendLayout();
+            this.panel32.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -189,6 +183,7 @@
             this.btnRestart.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
             this.btnRestart.Size = new System.Drawing.Size(181, 22);
             this.btnRestart.Text = "Restart";
+            this.btnRestart.Click += new System.EventHandler(this.btnRestart_Click);
             // 
             // btnExit
             // 
@@ -197,6 +192,7 @@
             | System.Windows.Forms.Keys.Q)));
             this.btnExit.Size = new System.Drawing.Size(181, 22);
             this.btnExit.Text = "Exit";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // groupBox1
             // 
@@ -248,11 +244,9 @@
             this.splitContainer2.Panel2.Controls.Add(this.panel8);
             this.splitContainer2.Panel2.Controls.Add(this.panelAddbtn);
             this.splitContainer2.Panel2.Controls.Add(this.panel21);
-            this.splitContainer2.Panel2.Controls.Add(this.panelSelectPhoto);
-            this.splitContainer2.Panel2.Controls.Add(this.panel20);
             this.splitContainer2.Panel2.Controls.Add(this.panel17);
             this.splitContainer2.Panel2.Controls.Add(this.panel16);
-            this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
+            this.splitContainer2.Panel2.Controls.Add(this.groupBoxDaily);
             this.splitContainer2.Panel2.Controls.Add(this.panel14);
             this.splitContainer2.Panel2.Controls.Add(this.chlstIsRent);
             this.splitContainer2.Panel2.Controls.Add(this.txtYears);
@@ -261,7 +255,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.panel12);
             this.splitContainer2.Panel2.Controls.Add(this.cmbModels);
             this.splitContainer2.Panel2.Controls.Add(this.panel11);
-            this.splitContainer2.Panel2.Controls.Add(this.cmbVehicle);
+            this.splitContainer2.Panel2.Controls.Add(this.cmbBrands);
             this.splitContainer2.Panel2.Controls.Add(this.panel6);
             this.splitContainer2.Panel2.Controls.Add(this.label2);
             this.splitContainer2.Panel2.Controls.Add(this.panel2);
@@ -274,20 +268,20 @@
             // panel23
             // 
             this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel23.Location = new System.Drawing.Point(5, 707);
+            this.panel23.Location = new System.Drawing.Point(5, 701);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(268, 6);
-            this.panel23.TabIndex = 7;
+            this.panel23.Size = new System.Drawing.Size(268, 12);
+            this.panel23.TabIndex = 10;
             // 
             // panelVehicleDelete
             // 
             this.panelVehicleDelete.Controls.Add(this.btnDeleteVehicle);
             this.panelVehicleDelete.Controls.Add(this.panel10);
             this.panelVehicleDelete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelVehicleDelete.Location = new System.Drawing.Point(5, 672);
+            this.panelVehicleDelete.Location = new System.Drawing.Point(5, 666);
             this.panelVehicleDelete.Name = "panelVehicleDelete";
             this.panelVehicleDelete.Size = new System.Drawing.Size(268, 35);
-            this.panelVehicleDelete.TabIndex = 6;
+            this.panelVehicleDelete.TabIndex = 9;
             // 
             // btnDeleteVehicle
             // 
@@ -295,37 +289,40 @@
             this.btnDeleteVehicle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDeleteVehicle.Font = new System.Drawing.Font("Mongolian Baiti", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDeleteVehicle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDeleteVehicle.Location = new System.Drawing.Point(176, 0);
+            this.btnDeleteVehicle.Location = new System.Drawing.Point(172, 0);
             this.btnDeleteVehicle.Name = "btnDeleteVehicle";
-            this.btnDeleteVehicle.Size = new System.Drawing.Size(92, 35);
+            this.btnDeleteVehicle.Size = new System.Drawing.Size(96, 35);
             this.btnDeleteVehicle.TabIndex = 1;
             this.btnDeleteVehicle.Text = "Delete";
             this.btnDeleteVehicle.UseVisualStyleBackColor = false;
+            this.btnDeleteVehicle.Click += new System.EventHandler(this.btnDeleteVehicle_Click);
             // 
             // panel10
             // 
             this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(176, 35);
+            this.panel10.Size = new System.Drawing.Size(172, 35);
             this.panel10.TabIndex = 9;
             // 
             // panel9
             // 
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(5, 659);
+            this.panel9.Location = new System.Drawing.Point(5, 644);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(268, 13);
-            this.panel9.TabIndex = 5;
+            this.panel9.Size = new System.Drawing.Size(268, 22);
+            this.panel9.TabIndex = 8;
             // 
             // lstVehicles
             // 
             this.lstVehicles.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lstVehicles.Font = new System.Drawing.Font("Mongolian Baiti", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lstVehicles.FormattingEnabled = true;
+            this.lstVehicles.ItemHeight = 21;
             this.lstVehicles.Location = new System.Drawing.Point(5, 94);
             this.lstVehicles.Name = "lstVehicles";
-            this.lstVehicles.Size = new System.Drawing.Size(268, 565);
+            this.lstVehicles.Size = new System.Drawing.Size(268, 550);
             this.lstVehicles.TabIndex = 4;
-            this.lstVehicles.UseCompatibleStateImageBehavior = false;
             // 
             // panel5
             // 
@@ -345,9 +342,9 @@
             this.label1.Location = new System.Drawing.Point(5, 44);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(113, 31);
+            this.label1.Size = new System.Drawing.Size(127, 31);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Vehicle";
+            this.label1.Text = "Vehicles";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
@@ -361,9 +358,9 @@
             // panel8
             // 
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(5, 707);
+            this.panel8.Location = new System.Drawing.Point(5, 700);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(313, 6);
+            this.panel8.Size = new System.Drawing.Size(313, 13);
             this.panel8.TabIndex = 38;
             // 
             // panelAddbtn
@@ -371,7 +368,7 @@
             this.panelAddbtn.Controls.Add(this.btnAddVehicle);
             this.panelAddbtn.Controls.Add(this.panel22);
             this.panelAddbtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAddbtn.Location = new System.Drawing.Point(5, 672);
+            this.panelAddbtn.Location = new System.Drawing.Point(5, 665);
             this.panelAddbtn.MaximumSize = new System.Drawing.Size(0, 35);
             this.panelAddbtn.MinimumSize = new System.Drawing.Size(0, 35);
             this.panelAddbtn.Name = "panelAddbtn";
@@ -390,6 +387,7 @@
             this.btnAddVehicle.TabIndex = 9;
             this.btnAddVehicle.Text = "Add";
             this.btnAddVehicle.UseVisualStyleBackColor = false;
+            this.btnAddVehicle.Click += new System.EventHandler(this.btnAddVehicle_Click);
             // 
             // panel22
             // 
@@ -403,84 +401,31 @@
             // panel21
             // 
             this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel21.Location = new System.Drawing.Point(5, 659);
-            this.panel21.MaximumSize = new System.Drawing.Size(0, 13);
+            this.panel21.Location = new System.Drawing.Point(5, 651);
             this.panel21.MinimumSize = new System.Drawing.Size(0, 13);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(313, 13);
+            this.panel21.Size = new System.Drawing.Size(313, 14);
             this.panel21.TabIndex = 36;
-            // 
-            // panelSelectPhoto
-            // 
-            this.panelSelectPhoto.Controls.Add(this.btnSelectPhoto);
-            this.panelSelectPhoto.Controls.Add(this.panel19);
-            this.panelSelectPhoto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSelectPhoto.Location = new System.Drawing.Point(5, 619);
-            this.panelSelectPhoto.Name = "panelSelectPhoto";
-            this.panelSelectPhoto.Size = new System.Drawing.Size(313, 40);
-            this.panelSelectPhoto.TabIndex = 29;
-            // 
-            // btnSelectPhoto
-            // 
-            this.btnSelectPhoto.BackColor = System.Drawing.Color.Gray;
-            this.btnSelectPhoto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSelectPhoto.Font = new System.Drawing.Font("Mongolian Baiti", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSelectPhoto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSelectPhoto.Location = new System.Drawing.Point(152, 0);
-            this.btnSelectPhoto.Name = "btnSelectPhoto";
-            this.btnSelectPhoto.Size = new System.Drawing.Size(161, 40);
-            this.btnSelectPhoto.TabIndex = 8;
-            this.btnSelectPhoto.Text = "Select Photo";
-            this.btnSelectPhoto.UseVisualStyleBackColor = false;
-            // 
-            // panel19
-            // 
-            this.panel19.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel19.Location = new System.Drawing.Point(0, 0);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(152, 40);
-            this.panel19.TabIndex = 0;
-            // 
-            // panel20
-            // 
-            this.panel20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel20.Location = new System.Drawing.Point(5, 602);
-            this.panel20.MaximumSize = new System.Drawing.Size(0, 17);
-            this.panel20.MinimumSize = new System.Drawing.Size(0, 17);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(313, 17);
-            this.panel20.TabIndex = 35;
             // 
             // panel17
             // 
             this.panel17.Controls.Add(this.pbPhoto);
-            this.panel17.Controls.Add(this.panel18);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel17.Location = new System.Drawing.Point(5, 409);
-            this.panel17.MaximumSize = new System.Drawing.Size(0, 193);
-            this.panel17.MinimumSize = new System.Drawing.Size(0, 193);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(313, 193);
+            this.panel17.Size = new System.Drawing.Size(313, 242);
             this.panel17.TabIndex = 30;
             // 
             // pbPhoto
             // 
             this.pbPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbPhoto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbPhoto.Location = new System.Drawing.Point(55, 0);
+            this.pbPhoto.Location = new System.Drawing.Point(0, 0);
             this.pbPhoto.Name = "pbPhoto";
-            this.pbPhoto.Size = new System.Drawing.Size(258, 193);
+            this.pbPhoto.Size = new System.Drawing.Size(313, 242);
             this.pbPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPhoto.TabIndex = 1;
             this.pbPhoto.TabStop = false;
-            // 
-            // panel18
-            // 
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel18.Location = new System.Drawing.Point(0, 0);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(55, 193);
-            this.panel18.TabIndex = 0;
             // 
             // panel16
             // 
@@ -492,22 +437,22 @@
             this.panel16.Size = new System.Drawing.Size(313, 10);
             this.panel16.TabIndex = 34;
             // 
-            // groupBox2
+            // groupBoxDaily
             // 
-            this.groupBox2.Controls.Add(this.numericRentalPrice);
-            this.groupBox2.Controls.Add(this.panel15);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Enabled = false;
-            this.groupBox2.Location = new System.Drawing.Point(5, 331);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.groupBox2.MaximumSize = new System.Drawing.Size(0, 68);
-            this.groupBox2.MinimumSize = new System.Drawing.Size(0, 68);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBox2.Size = new System.Drawing.Size(313, 68);
-            this.groupBox2.TabIndex = 33;
-            this.groupBox2.TabStop = false;
+            this.groupBoxDaily.Controls.Add(this.numericRentalPrice);
+            this.groupBoxDaily.Controls.Add(this.panel15);
+            this.groupBoxDaily.Controls.Add(this.label5);
+            this.groupBoxDaily.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBoxDaily.Enabled = false;
+            this.groupBoxDaily.Location = new System.Drawing.Point(5, 331);
+            this.groupBoxDaily.Margin = new System.Windows.Forms.Padding(0);
+            this.groupBoxDaily.MaximumSize = new System.Drawing.Size(0, 68);
+            this.groupBoxDaily.MinimumSize = new System.Drawing.Size(0, 68);
+            this.groupBoxDaily.Name = "groupBoxDaily";
+            this.groupBoxDaily.Padding = new System.Windows.Forms.Padding(0);
+            this.groupBoxDaily.Size = new System.Drawing.Size(313, 68);
+            this.groupBoxDaily.TabIndex = 33;
+            this.groupBoxDaily.TabStop = false;
             // 
             // numericRentalPrice
             // 
@@ -571,6 +516,7 @@
             this.chlstIsRent.TabIndex = 6;
             this.chlstIsRent.Text = "Is it for rent";
             this.chlstIsRent.UseVisualStyleBackColor = true;
+            this.chlstIsRent.CheckedChanged += new System.EventHandler(this.chlstIsRent_CheckedChanged);
             // 
             // txtYears
             // 
@@ -624,6 +570,7 @@
             this.cmbModels.Size = new System.Drawing.Size(313, 29);
             this.cmbModels.TabIndex = 3;
             this.cmbModels.Text = "Models";
+            this.cmbModels.SelectedIndexChanged += new System.EventHandler(this.cmbModels_SelectedIndexChanged);
             // 
             // panel11
             // 
@@ -635,16 +582,17 @@
             this.panel11.Size = new System.Drawing.Size(313, 25);
             this.panel11.TabIndex = 6;
             // 
-            // cmbVehicle
+            // cmbBrands
             // 
-            this.cmbVehicle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cmbVehicle.Font = new System.Drawing.Font("Mongolian Baiti", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cmbVehicle.FormattingEnabled = true;
-            this.cmbVehicle.Location = new System.Drawing.Point(5, 94);
-            this.cmbVehicle.Name = "cmbVehicle";
-            this.cmbVehicle.Size = new System.Drawing.Size(313, 29);
-            this.cmbVehicle.TabIndex = 2;
-            this.cmbVehicle.Text = "Please Select Vehicle";
+            this.cmbBrands.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cmbBrands.Font = new System.Drawing.Font("Mongolian Baiti", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmbBrands.FormattingEnabled = true;
+            this.cmbBrands.Location = new System.Drawing.Point(5, 94);
+            this.cmbBrands.Name = "cmbBrands";
+            this.cmbBrands.Size = new System.Drawing.Size(313, 29);
+            this.cmbBrands.TabIndex = 2;
+            this.cmbBrands.Text = "Please Select Brand";
+            this.cmbBrands.SelectedIndexChanged += new System.EventHandler(this.cmbBrands_SelectedIndexChanged);
             // 
             // panel6
             // 
@@ -714,59 +662,6 @@
             this.splitContainer3.Size = new System.Drawing.Size(710, 715);
             this.splitContainer3.SplitterDistance = 277;
             this.splitContainer3.TabIndex = 0;
-            // 
-            // panel37
-            // 
-            this.panel37.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel37.Location = new System.Drawing.Point(5, 365);
-            this.panel37.Name = "panel37";
-            this.panel37.Size = new System.Drawing.Size(265, 348);
-            this.panel37.TabIndex = 39;
-            // 
-            // panel32
-            // 
-            this.panel32.Controls.Add(this.btnRentPerson);
-            this.panel32.Controls.Add(this.panel33);
-            this.panel32.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel32.Location = new System.Drawing.Point(5, 330);
-            this.panel32.MaximumSize = new System.Drawing.Size(0, 35);
-            this.panel32.MinimumSize = new System.Drawing.Size(0, 35);
-            this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(265, 35);
-            this.panel32.TabIndex = 38;
-            // 
-            // btnRentPerson
-            // 
-            this.btnRentPerson.BackColor = System.Drawing.Color.Gray;
-            this.btnRentPerson.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRentPerson.Font = new System.Drawing.Font("Mongolian Baiti", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnRentPerson.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRentPerson.Location = new System.Drawing.Point(171, 0);
-            this.btnRentPerson.Name = "btnRentPerson";
-            this.btnRentPerson.Size = new System.Drawing.Size(94, 35);
-            this.btnRentPerson.TabIndex = 15;
-            this.btnRentPerson.Text = "Rent";
-            this.btnRentPerson.UseVisualStyleBackColor = false;
-            // 
-            // panel33
-            // 
-            this.panel33.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel33.Location = new System.Drawing.Point(0, 0);
-            this.panel33.Name = "panel33";
-            this.panel33.Padding = new System.Windows.Forms.Padding(5);
-            this.panel33.Size = new System.Drawing.Size(171, 35);
-            this.panel33.TabIndex = 9;
-            // 
-            // txtDownPayment
-            // 
-            this.txtDownPayment.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtDownPayment.Font = new System.Drawing.Font("Mongolian Baiti", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDownPayment.Location = new System.Drawing.Point(5, 299);
-            this.txtDownPayment.Name = "txtDownPayment";
-            this.txtDownPayment.PlaceholderText = "Down payment";
-            this.txtDownPayment.Size = new System.Drawing.Size(265, 31);
-            this.txtDownPayment.TabIndex = 14;
-            this.txtDownPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel31
             // 
@@ -931,20 +826,20 @@
             // panel27
             // 
             this.panel27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel27.Location = new System.Drawing.Point(0, 707);
+            this.panel27.Location = new System.Drawing.Point(0, 701);
             this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(422, 6);
-            this.panel27.TabIndex = 10;
+            this.panel27.Size = new System.Drawing.Size(422, 12);
+            this.panel27.TabIndex = 13;
             // 
             // panel34
             // 
             this.panel34.Controls.Add(this.btnRentalLstDelete);
             this.panel34.Controls.Add(this.panel35);
             this.panel34.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel34.Location = new System.Drawing.Point(0, 672);
+            this.panel34.Location = new System.Drawing.Point(0, 666);
             this.panel34.Name = "panel34";
             this.panel34.Size = new System.Drawing.Size(422, 35);
-            this.panel34.TabIndex = 9;
+            this.panel34.TabIndex = 12;
             // 
             // btnRentalLstDelete
             // 
@@ -952,46 +847,49 @@
             this.btnRentalLstDelete.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRentalLstDelete.Font = new System.Drawing.Font("Mongolian Baiti", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnRentalLstDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRentalLstDelete.Location = new System.Drawing.Point(315, 0);
+            this.btnRentalLstDelete.Location = new System.Drawing.Point(348, 0);
             this.btnRentalLstDelete.Name = "btnRentalLstDelete";
-            this.btnRentalLstDelete.Size = new System.Drawing.Size(107, 35);
+            this.btnRentalLstDelete.Size = new System.Drawing.Size(74, 35);
             this.btnRentalLstDelete.TabIndex = 16;
             this.btnRentalLstDelete.Text = "Delete";
             this.btnRentalLstDelete.UseVisualStyleBackColor = false;
+            this.btnRentalLstDelete.Click += new System.EventHandler(this.btnRentalLstDelete_Click);
             // 
             // panel35
             // 
             this.panel35.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel35.Location = new System.Drawing.Point(0, 0);
             this.panel35.Name = "panel35";
-            this.panel35.Size = new System.Drawing.Size(315, 35);
+            this.panel35.Size = new System.Drawing.Size(348, 35);
             this.panel35.TabIndex = 9;
             // 
             // panel36
             // 
             this.panel36.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel36.Location = new System.Drawing.Point(0, 659);
+            this.panel36.Location = new System.Drawing.Point(0, 644);
             this.panel36.Name = "panel36";
-            this.panel36.Size = new System.Drawing.Size(422, 13);
-            this.panel36.TabIndex = 8;
+            this.panel36.Size = new System.Drawing.Size(422, 22);
+            this.panel36.TabIndex = 11;
             // 
             // lstRental
             // 
             this.lstRental.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lstRental.Font = new System.Drawing.Font("Mongolian Baiti", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lstRental.FormattingEnabled = true;
+            this.lstRental.HorizontalScrollbar = true;
+            this.lstRental.ItemHeight = 21;
             this.lstRental.Location = new System.Drawing.Point(0, 94);
             this.lstRental.Name = "lstRental";
-            this.lstRental.Size = new System.Drawing.Size(422, 565);
+            this.lstRental.ScrollAlwaysVisible = true;
+            this.lstRental.Size = new System.Drawing.Size(422, 550);
             this.lstRental.TabIndex = 6;
-            this.lstRental.UseCompatibleStateImageBehavior = false;
             // 
             // panel24
             // 
             this.panel24.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel24.Location = new System.Drawing.Point(0, 75);
-            this.panel24.MaximumSize = new System.Drawing.Size(403, 19);
-            this.panel24.MinimumSize = new System.Drawing.Size(403, 19);
             this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(403, 19);
+            this.panel24.Size = new System.Drawing.Size(422, 19);
             this.panel24.TabIndex = 5;
             // 
             // label4
@@ -1014,6 +912,60 @@
             this.panel4.Size = new System.Drawing.Size(422, 39);
             this.panel4.TabIndex = 1;
             // 
+            // txtDownPayment
+            // 
+            this.txtDownPayment.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtDownPayment.Font = new System.Drawing.Font("Mongolian Baiti", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtDownPayment.Location = new System.Drawing.Point(5, 299);
+            this.txtDownPayment.Name = "txtDownPayment";
+            this.txtDownPayment.PlaceholderText = "Down payment";
+            this.txtDownPayment.Size = new System.Drawing.Size(265, 31);
+            this.txtDownPayment.TabIndex = 14;
+            this.txtDownPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // panel37
+            // 
+            this.panel37.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel37.Location = new System.Drawing.Point(5, 365);
+            this.panel37.Name = "panel37";
+            this.panel37.Size = new System.Drawing.Size(265, 348);
+            this.panel37.TabIndex = 39;
+            // 
+            // panel33
+            // 
+            this.panel33.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel33.Location = new System.Drawing.Point(0, 0);
+            this.panel33.Name = "panel33";
+            this.panel33.Padding = new System.Windows.Forms.Padding(5);
+            this.panel33.Size = new System.Drawing.Size(171, 35);
+            this.panel33.TabIndex = 9;
+            // 
+            // btnRentPerson
+            // 
+            this.btnRentPerson.BackColor = System.Drawing.Color.Gray;
+            this.btnRentPerson.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRentPerson.Font = new System.Drawing.Font("Mongolian Baiti", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRentPerson.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnRentPerson.Location = new System.Drawing.Point(171, 0);
+            this.btnRentPerson.Name = "btnRentPerson";
+            this.btnRentPerson.Size = new System.Drawing.Size(94, 35);
+            this.btnRentPerson.TabIndex = 15;
+            this.btnRentPerson.Text = "Rent";
+            this.btnRentPerson.UseVisualStyleBackColor = false;
+            this.btnRentPerson.Click += new System.EventHandler(this.btnRentPerson_Click);
+            // 
+            // panel32
+            // 
+            this.panel32.Controls.Add(this.btnRentPerson);
+            this.panel32.Controls.Add(this.panel33);
+            this.panel32.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel32.Location = new System.Drawing.Point(5, 330);
+            this.panel32.MaximumSize = new System.Drawing.Size(0, 35);
+            this.panel32.MinimumSize = new System.Drawing.Size(0, 35);
+            this.panel32.Name = "panel32";
+            this.panel32.Size = new System.Drawing.Size(265, 35);
+            this.panel32.TabIndex = 38;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1026,6 +978,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rent A Car";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -1041,11 +994,10 @@
             this.splitContainer2.ResumeLayout(false);
             this.panelVehicleDelete.ResumeLayout(false);
             this.panelAddbtn.ResumeLayout(false);
-            this.panelSelectPhoto.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.groupBoxDaily.ResumeLayout(false);
+            this.groupBoxDaily.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericRentalPrice)).EndInit();
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel1.PerformLayout();
@@ -1053,12 +1005,12 @@
             this.splitContainer3.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
-            this.panel32.ResumeLayout(false);
             this.panel30.ResumeLayout(false);
             this.panel30.PerformLayout();
             this.panel28.ResumeLayout(false);
             this.panel28.PerformLayout();
             this.panel34.ResumeLayout(false);
+            this.panel32.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1070,12 +1022,6 @@
         private GroupBox groupBox1;
         private SplitContainer splitContainer1;
         private SplitContainer splitContainer2;
-        private Panel panel23;
-        private Panel panelVehicleDelete;
-        private Button btnDeleteVehicle;
-        private Panel panel10;
-        private Panel panel9;
-        private ListView lstVehicles;
         private Panel panel5;
         private Label label1;
         private Panel panel1;
@@ -1087,12 +1033,10 @@
         private Panel panelSelectPhoto;
         private Button btnSelectPhoto;
         private Panel panel19;
-        private Panel panel20;
         private Panel panel17;
         private PictureBox pbPhoto;
-        private Panel panel18;
         private Panel panel16;
-        private GroupBox groupBox2;
+        private GroupBox groupBoxDaily;
         private NumericUpDown numericRentalPrice;
         private Panel panel15;
         private Label label5;
@@ -1104,7 +1048,7 @@
         private Panel panel12;
         private ComboBox cmbModels;
         private Panel panel11;
-        private ComboBox cmbVehicle;
+        private ComboBox cmbBrands;
         private Panel panel6;
         private Label label2;
         private Panel panel2;
@@ -1129,12 +1073,6 @@
         private Panel panel7;
         private Label label3;
         private Panel panel3;
-        private Panel panel27;
-        private Panel panel34;
-        private Button btnRentalLstDelete;
-        private Panel panel35;
-        private Panel panel36;
-        private ListView lstRental;
         private Panel panel24;
         private Label label4;
         private Panel panel4;
@@ -1144,5 +1082,17 @@
         private ToolStripSeparator toolStripMenuItem1;
         private ToolStripMenuItem btnRestart;
         private ToolStripMenuItem btnExit;
+        private Panel panel23;
+        private Panel panelVehicleDelete;
+        private Button btnDeleteVehicle;
+        private Panel panel10;
+        private Panel panel9;
+        private ListBox lstVehicles;
+        private Panel panel27;
+        private Panel panel34;
+        private Button btnRentalLstDelete;
+        private Panel panel35;
+        private Panel panel36;
+        private ListBox lstRental;
     }
 }

@@ -8,12 +8,14 @@ namespace RentACar
 {
     public class Vehicle
     {
-        public string BrandName { get; set; }
-        public List<Model> Models { get; set; } = new List<Model>();
-    }
-    public class Model
-    {
-        public string ModelName { get; set; }
-        public string ImgPath { get; set; } = string.Empty;
+       public Brand Brand { get; set; }
+       public string Km { get; set; }
+       public string Year { get; set; }
+       public bool IsItRent { get; set; }
+       public decimal DailyPrice { get; set; }
+       public override string ToString()
+       {
+           return $"{this.Brand.BrandName}-{this.Brand.Models[0].ModelName}({this.Year})";
+       }
     }
 }

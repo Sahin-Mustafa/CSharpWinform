@@ -67,7 +67,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(684, 661);
+            this.groupBox1.Size = new System.Drawing.Size(700, 661);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -77,7 +77,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel6.Location = new System.Drawing.Point(3, 650);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(678, 8);
+            this.panel6.Size = new System.Drawing.Size(694, 8);
             this.panel6.TabIndex = 35;
             // 
             // panel2
@@ -88,7 +88,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(3, 609);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(678, 41);
+            this.panel2.Size = new System.Drawing.Size(694, 41);
             this.panel2.TabIndex = 34;
             // 
             // panel5
@@ -96,7 +96,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(437, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(241, 41);
+            this.panel5.Size = new System.Drawing.Size(257, 41);
             this.panel5.TabIndex = 9;
             // 
             // btnSaveNewVehicle
@@ -128,7 +128,7 @@
             this.panel4.MaximumSize = new System.Drawing.Size(0, 22);
             this.panel4.MinimumSize = new System.Drawing.Size(0, 22);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(678, 22);
+            this.panel4.Size = new System.Drawing.Size(694, 22);
             this.panel4.TabIndex = 33;
             // 
             // pbPhoto
@@ -137,7 +137,7 @@
             this.pbPhoto.Dock = System.Windows.Forms.DockStyle.Top;
             this.pbPhoto.Location = new System.Drawing.Point(3, 209);
             this.pbPhoto.Name = "pbPhoto";
-            this.pbPhoto.Size = new System.Drawing.Size(678, 378);
+            this.pbPhoto.Size = new System.Drawing.Size(694, 378);
             this.pbPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbPhoto.TabIndex = 32;
             this.pbPhoto.TabStop = false;
@@ -149,7 +149,7 @@
             this.panel1.MaximumSize = new System.Drawing.Size(0, 22);
             this.panel1.MinimumSize = new System.Drawing.Size(0, 22);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(678, 22);
+            this.panel1.Size = new System.Drawing.Size(694, 22);
             this.panel1.TabIndex = 31;
             // 
             // panelSelectPhoto
@@ -159,7 +159,7 @@
             this.panelSelectPhoto.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSelectPhoto.Location = new System.Drawing.Point(3, 147);
             this.panelSelectPhoto.Name = "panelSelectPhoto";
-            this.panelSelectPhoto.Size = new System.Drawing.Size(678, 40);
+            this.panelSelectPhoto.Size = new System.Drawing.Size(694, 40);
             this.panelSelectPhoto.TabIndex = 30;
             // 
             // btnNewVehiclePhoto
@@ -168,7 +168,7 @@
             this.btnNewVehiclePhoto.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnNewVehiclePhoto.Font = new System.Drawing.Font("Mongolian Baiti", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnNewVehiclePhoto.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNewVehiclePhoto.Location = new System.Drawing.Point(538, 0);
+            this.btnNewVehiclePhoto.Location = new System.Drawing.Point(554, 0);
             this.btnNewVehiclePhoto.Name = "btnNewVehiclePhoto";
             this.btnNewVehiclePhoto.Size = new System.Drawing.Size(140, 40);
             this.btnNewVehiclePhoto.TabIndex = 8;
@@ -181,7 +181,7 @@
             this.panel19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel19.Location = new System.Drawing.Point(0, 0);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(678, 40);
+            this.panel19.Size = new System.Drawing.Size(694, 40);
             this.panel19.TabIndex = 0;
             // 
             // panel26
@@ -191,7 +191,7 @@
             this.panel26.MaximumSize = new System.Drawing.Size(0, 22);
             this.panel26.MinimumSize = new System.Drawing.Size(0, 22);
             this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(678, 22);
+            this.panel26.Size = new System.Drawing.Size(694, 22);
             this.panel26.TabIndex = 19;
             // 
             // txtModelName
@@ -201,7 +201,7 @@
             this.txtModelName.Location = new System.Drawing.Point(3, 94);
             this.txtModelName.Name = "txtModelName";
             this.txtModelName.PlaceholderText = "Model Name";
-            this.txtModelName.Size = new System.Drawing.Size(678, 31);
+            this.txtModelName.Size = new System.Drawing.Size(694, 31);
             this.txtModelName.TabIndex = 17;
             this.txtModelName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -212,7 +212,7 @@
             this.panel13.MaximumSize = new System.Drawing.Size(0, 25);
             this.panel13.MinimumSize = new System.Drawing.Size(0, 25);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(678, 25);
+            this.panel13.Size = new System.Drawing.Size(694, 25);
             this.panel13.TabIndex = 18;
             // 
             // txtBrandName
@@ -222,7 +222,7 @@
             this.txtBrandName.Location = new System.Drawing.Point(3, 38);
             this.txtBrandName.Name = "txtBrandName";
             this.txtBrandName.PlaceholderText = "Brand Name";
-            this.txtBrandName.Size = new System.Drawing.Size(678, 31);
+            this.txtBrandName.Size = new System.Drawing.Size(694, 31);
             this.txtBrandName.TabIndex = 16;
             this.txtBrandName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -233,14 +233,14 @@
             this.panel7.MaximumSize = new System.Drawing.Size(0, 19);
             this.panel7.MinimumSize = new System.Drawing.Size(0, 19);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(678, 19);
+            this.panel7.Size = new System.Drawing.Size(694, 19);
             this.panel7.TabIndex = 15;
             // 
             // NewVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 661);
+            this.ClientSize = new System.Drawing.Size(700, 661);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -275,5 +275,9 @@
         private Panel panel4;
         private PictureBox pbPhoto;
         private Panel panel6;
+        private Panel panel37;
+        private Panel panel32;
+        private Button btnRentPerson;
+        private Panel panel33;
     }
 }
