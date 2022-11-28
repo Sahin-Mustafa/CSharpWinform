@@ -13,6 +13,7 @@ namespace Expenses
             formSignUpPage signUpPage= new formSignUpPage();
             signUpPage.Show();
             this.Hide();
+			//
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
