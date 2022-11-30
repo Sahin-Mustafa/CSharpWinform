@@ -17,7 +17,7 @@ namespace Expenses
         private List<Expense> employeeExpenses=new List<Expense>();
         private Employee employee;
         private Expense expense;
-        private DataGridViewCellEventArgs mouseLocation;
+        private DataGridViewCellEventArgs mouseLocation; //mouse position when right click is done
 
         public Home(Employee employe)
         {
@@ -124,24 +124,6 @@ namespace Expenses
                 btnDelete.Visible = false;
             }
         }
-        private void UpdateExpense(string newStatus)
-        {
-            employeeExpenses.Remove(expense);
-            expensesList.Remove(expense);
-
-            //update values of expense 
-            expense.Expense_Title = txtExpenseTitle.Text;
-            expense.Expense_Date = dtpExpenseDate.Value;
-            expense.Amount = nudAmount.Value;
-            expense.Expense_Detail = txtExpenseDetail.Text;
-            expense.Status = newStatus;
-
-            employeeExpenses.Add(expense);
-            expensesList.Add(expense);
-            SetDataView(employeeExpenses);
-            FileOperations.SaveExpensesFile(expensesList);
-            btnUpdate.Visible = false;
-        }
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (employee.EmployeeType.ToLower() == "worker" && expense.Status.ToLower() == "waiting")
@@ -164,14 +146,6 @@ namespace Expenses
             }
 
         }
-        private void RemoveExpense()
-        {
-            employeeExpenses.Remove(expense);
-            expensesList.Remove(expense);
-            SetDataView(employeeExpenses);
-            FileOperations.SaveExpensesFile(expensesList);
-            btnDelete.Visible = false;
-        }
         private void approveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Expense currentExpense = SelectExpense();
@@ -184,15 +158,38 @@ namespace Expenses
         }
         private void payToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //dataGridView1[1,1].Value="tes";
-            //colomn ile row kordinatını veriyor
-
-            //dgvExpenseList.Rows[rowIndex].Selected.ToString()
-            //dgvExpenseList.SelectedRows[rowIndex].Selected = true;
-
             Expense currentExpense = SelectExpense();
             ChangeExpenseStatus(currentExpense, "approved","Paid");
         }
+
+        /// <summary>
+        /// Retrieving data from datagridview with double click and displaying it to 'textboxes'
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvExpenseList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            dgvExpenseList.CurrentCell = dgvExpenseList.Rows[index].Cells[0];
+            Expense currentExpense = (Expense)dgvExpenseList.CurrentRow.DataBoundItem;
+            expense = currentExpense;
+
+            txtExpenseTitle.Text = expense.Expense_Title;
+            dtpExpenseDate.Value = expense.Expense_Date;
+            nudAmount.Value = expense.Amount;
+            txtExpenseDetail.Text = expense.Expense_Detail;
+
+            btnUpdate.Visible = true;
+            btnDelete.Visible = true;
+
+
+        }
+
+        /// <summary>
+        /// mouse position when right click is done
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="location"></param>
         private void dgvExpenseList_CellMouseEnter(object sender, DataGridViewCellEventArgs location)
         {
             mouseLocation = location;
@@ -202,7 +199,37 @@ namespace Expenses
             Application.Exit();
         }
 
-        //method
+        //methods
+        private void UpdateExpense(string newStatus)
+        {
+            employeeExpenses.Remove(expense);
+            expensesList.Remove(expense);
+
+            //update values of expense 
+            expense.Expense_Title = txtExpenseTitle.Text;
+            expense.Expense_Date = dtpExpenseDate.Value;
+            expense.Amount = nudAmount.Value;
+            expense.Expense_Detail = txtExpenseDetail.Text;
+            expense.Status = newStatus;
+
+            employeeExpenses.Add(expense);
+            expensesList.Add(expense);
+            SetDataView(employeeExpenses);
+            FileOperations.SaveExpensesFile(expensesList);
+            btnUpdate.Visible = false;
+        }
+        private void RemoveExpense()
+        {
+            employeeExpenses.Remove(expense);
+            expensesList.Remove(expense);
+            SetDataView(employeeExpenses);
+            FileOperations.SaveExpensesFile(expensesList);
+            btnDelete.Visible = false;
+        }
+        /// <summary>
+        /// Show Json file on DataGridView
+        /// </summary>
+        /// <param name="expenseList"></param>
         private void SetDataView(List<Expense> expenseList)
         {
             dgvExpenseList.DataSource = null;
@@ -224,6 +251,10 @@ namespace Expenses
             }
         }
 
+        /// <summary>
+        /// Returns the selected spend on the 'DataGridView' by double clicking.
+        /// </summary>
+        /// <returns></returns>
         private Expense SelectExpense()
         {
             int rowIndex = dgvExpenseList.Rows[mouseLocation.RowIndex].Cells[mouseLocation.ColumnIndex].RowIndex;
@@ -231,17 +262,19 @@ namespace Expenses
             Expense currentExpense = (Expense)dgvExpenseList.CurrentRow.DataBoundItem;
             return currentExpense;
         }
+
+        /// <summary>
+        /// Changing the expenditure by pressing the right button.
+        /// </summary>
+        /// <param name="currentExpense"></param>
+        /// <param name="process"></param>
+        /// <param name="result"></param>
         private void ChangeExpenseStatus(Expense currentExpense, string process,string result)
         {
             if (currentExpense.Status.ToLower() == process.ToLower())
             {
-                foreach (Expense expense in expensesList)
-                {
-                    if (expense.ExpenseId == currentExpense.ExpenseId)
-                    {
-                        expense.Status = result;
-                    }
-                }
+                int index=expensesList.IndexOf(currentExpense);
+                expensesList[index].Status = result;
                 SetDataView(expensesList);
                 FileOperations.SaveExpensesFile(expensesList);
             }
@@ -252,23 +285,7 @@ namespace Expenses
             }
         }
 
-        private void dgvExpenseList_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int index = e.RowIndex;
-            dgvExpenseList.CurrentCell = dgvExpenseList.Rows[index].Cells[0];
-            Expense currentExpense = (Expense)dgvExpenseList.CurrentRow.DataBoundItem;
-            expense = currentExpense;
-
-            txtExpenseTitle.Text = expense.Expense_Title;
-            dtpExpenseDate.Value = expense.Expense_Date;
-            nudAmount.Value = expense.Amount;
-            txtExpenseDetail.Text=expense.Expense_Detail;
-
-            btnUpdate.Visible = true;
-            btnDelete.Visible = true;
-
-
-        }
+        
 
         
     }
